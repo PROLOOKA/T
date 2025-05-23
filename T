@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>مشغل بث مباشر HLS</title>
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@videojs/http-streaming@3.10.0/dist/videojs-http-streaming.min.js"></script>
+</head>
+<body>
+
+    <h1>بث مباشر HLS</h1>
+
+    <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" data-setup="{}">
+        <source src="http://154.70.152.44/live/Nunuche/n91QWbEX/89259.m3u8" type="application/x-mpegURL">
+        </video>
+
+    <script>
+        var player = videojs('my-video');
+
+        // يمكنك هنا التعامل مع أحداث المشغل إذا أردت
+        player.on('ready', function() {
+            console.log('المشغل جاهز!');
+        });
+
+        player.on('error', function() {
+            console.error('حدث خطأ في تشغيل البث.');
+        });
+    </script>
+
+</body>
+</html>
